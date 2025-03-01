@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="">
+        <label for="nama"> Nama kamu siapa: </label>
+        <input type="text" name="nama" placeholder="Masukkan Nama Kamu" required minlength="3" maxlength="20">
+        <br>
+
+        <label for="email">Email kamu apa: </label>
+        <input type="email" name="email" placeholder="Masukkan Email Kamu" required>
+        <br>
+
+        <label for="umur">Umur kamu berapa: </label>
+        <input type="number" name="umur" min="1" max="100">
+        <br>
+        <br>
+
+        <label for="cartoon">Kartun favorit kamu</label>
+        <select name="cartoon">
+            <option value="1">Upin Ipin</option>
+            <option value="2">Spongebob</option>
+            <option value="3">Sopo Jarwo</option>
+        </select>
+        <br>
+
+        <label for="gender">Kamu yang mana?</label>
+        <label><input type="radio" name="gender" value="male">laki-laki</label>
+        <label><input type="radio" name="gender" value="female">perempuan</label>
+        <br>
+
+        <label for="hobi">Hobi kamu apa?</label>
+        <label><input type="checkbox" name="hobi" value="masak">masak</label>
+        <label><input type="checkbox" name="hobi" value="nyanyi">nyayi</label>
+        <label><input type="checkbox" name="hobi" value="renang">renang</label>
+        <label><input type="checkbox" name="hobi" value="nonton film">nonton film</label>
+        <br>
+
+        <label for="file">Pilih file</label>
+        <input type="file" id="file" name="file">
+        <button type="submit" onclick="alert('Udah ke unggah nih!')">Unggah!</button>
+        <br>
+
+        <label for="komen"></label>
+        <textarea name="komen" rows="4" cols="50" placeholder="Disini kalau mau Komen"></textarea>
+        <br>
+        <br>
+
+        <button type="submit">Kirim deh</button>
+
+    </form>
+</body>
+</html>
