@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum 4 JavaScript</title>
+</head>
+<body>
+    <h1>Belajar JavaScript Dasar</h1>
+    <script src="Praktikum 4.js"></script>
+
+    <h2>Kalkulator</h2>
+    <input type="number" id="num1">
+    <input type="number" id="num2">
+    <button onclick="hitung()">Hitung</button>
+    <p>Hasil: <span id="hasil"></span></p>
+ 
+ 
+    <script>
+        function hitung() {
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+            let hasil = parseInt(num1) + parseInt(num2);
+            document.getElementById("hasil").innerText = hasil;
+        }
+    </script>
+    
+    <!-- <button onclick="alert('Saya sedang belajar bahasa pemrograman JavaScript')">Klik saya</button> INLINE -->
+
+    <!-- <script>
+        alert("Halo ini merupakan alert yang saya buat dengan JavaScript.")
+    </script> INTERNAL-->
+
+    <!-- <h1 id="judul">Selamat Datang</h1>
+    <button onclick="ubahTeks()">Ubah Teks</button>
+
+    <script>
+        function ubahTeks(){
+            document.getElementById("judul").innerHTML = "Selamat Datang Semua!";
+        }
+    </script> -->
+</body>
+</html>
