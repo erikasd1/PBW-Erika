@@ -1,11 +1,14 @@
 <?php
 define("PAJAK", 0.10);
 
-$barang = array(
+$barang = [
     "Keyboard" => 150000,
     "Mouse" => 50000,
-    "Monitor" => 1000000
-);
+    "Monitor" => 1000000,
+    "Printer" => 850000,
+    "Flashdisk 32GB" => 75000,
+    "Headset" => 120000
+];
 
 $nama_barang = "Keyboard";
 $jumlah_beli = 2;
