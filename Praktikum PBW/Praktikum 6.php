@@ -36,5 +36,10 @@
     $mhs = new Mahasiswa();
     $mhs->nama = "Erika Sita Dewi";
     echo $mhs->sapa();
+    
+    echo"<br>";
+
+    $data = null;
+    var_dump($data);
  
 ?>
