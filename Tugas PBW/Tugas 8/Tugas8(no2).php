@@ -5,63 +5,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tugas 2 Praktikum 8</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Arial, sans-serif';
             background-color: #f2f2f2;
-            margin: 0;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+            margin: 0;
         }
 
         h2 {
+            color: black;
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 1.8rem;
             text-align: center;
-            color: #333;
         }
 
         form {
             background-color: #fff;
+            padding: 25px 30px;
+            border-radius: 12px;
+            width: 100%;
             max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        form:hover {
+            transform: translateY(-5px);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #444;
         }
 
         input[type="text"],
         input[type="number"] {
             width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 8px 12px;
+            margin-bottom: 18px;
+            border-radius: 8px;
+            border: 1.8px solid #ddd;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            border-color: #667eea;
+            outline: none;
+            box-shadow: 0 0 5px #667eea;
         }
 
         input[type="submit"] {
-            background-color: #4CAF50;
+            background-color: #667eea;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 0;
             border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
             width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: rgb(27, 228, 27);
         }
 
         fieldset {
-            background-color: #fff;
-            max-width: 400px;
-            margin: 20px auto;
-            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 25px 30px;
             border: 2px solid #4CAF50;
-            border-radius: 10px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            max-width: 400px;
+            width: 100%;
+            color: #2c3e50;
         }
 
+        fieldset p,
         fieldset br {
-            margin-bottom: 10px;
+            font-size: 1rem;
+            margin: 8px 0;
         }
+
+        .error {
+            background-color: #ffe0e0;
+            color: #d8000c;
+            border: 1px solid #d8000c;
+            padding: 10px 15px;
+            border-radius: 8px;
+            max-width: 400px;
+            margin: 20px auto 0;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            form, fieldset {
+                max-width: 100%;
+                padding: 20px;
+            }
+
+            input[type="submit"] {
+                font-size: 1rem;
+                padding: 10px 0;
+            }
+        }
+
     </style>
 </head>
 <body>

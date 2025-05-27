@@ -35,7 +35,6 @@
         form h2 {
             color: black;
             margin-bottom: 20px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
             font-weight: 700;
             font-size: 1.8rem;
             text-align: center;
