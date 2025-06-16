@@ -24,6 +24,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/TugasPBW/Tugas9/buku/hapus.php">Hapus Buku</a>
         </li>
+        <li class="nav-item">
+          <a href="/TugasPBW/Tugas9/logout.php" class="btn btn-danger">Logout</a>
+        </li>
       </ul>
     </div>
   </div>

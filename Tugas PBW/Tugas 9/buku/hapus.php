@@ -14,6 +14,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['hapus_riwayat'])) {
 
 // Ambil daftar buku dari database
 $result = $conn->query("SELECT ID, Judul, Penulis FROM Buku");
+
+       if (!isset($_SESSION['login_Un51k4'])) {
+            header("Location: ../login.php?message=" . urlencode("Mengakses fitur harus login dulu cuuuyyy."));
+           exit;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -72,5 +77,12 @@ $result = $conn->query("SELECT ID, Judul, Penulis FROM Buku");
         <button type="submit" class="btn btn-warning mt-3" onclick="return confirm('Yakin ingin menghapus semua riwayat?')">Hapus Riwayat Buku yang Dihapus</button>
     </form>
 </div>
+<script>
+    // Mencegah tombol kembali
+    window.history.pushState(null, '', window.location.href);
+    window.onpopstate = function() {
+        window.history.pushState(null, '', window.location.href);
+    };
+</script>
 </body>
 </html>

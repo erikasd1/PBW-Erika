@@ -1,4 +1,18 @@
 <?php
+session_start();
+if (!isset($_SESSION['login_Un51k4'])) {
+    header("Location: ../login.php?message=" . urlencode("Mengakses fitur harus login dulu cuuuyyy."));
+    exit;
+}
+
+// Mencegah cache
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
+// Tambahkan ini untuk mencegah kembali ke halaman sebelumnya
+echo '<script>if (window.history.length > 1) { window.history.forward(); }</script>';
+
 include '../koneksi_db.php';
 include '../nav.php';
 
@@ -17,7 +31,7 @@ $pelanggan_result = $conn->query("SELECT ID, Nama, Alamat, Email, Telepon FROM P
 </head>
 <body>
 <div class="container mt-4">
-    <h2>Buat Pesanan Baru</h2>
+    <h2>Buat Pesanan</h2>
     <?php if (isset($_GET['message'])): ?>
         <div class="alert alert-info"><?= htmlspecialchars($_GET['message']) ?></div>
     <?php endif; ?>
@@ -125,5 +139,12 @@ $pelanggan_result = $conn->query("SELECT ID, Nama, Alamat, Email, Telepon FROM P
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Mencegah tombol kembali
+    window.history.pushState(null, '', window.location.href);
+    window.onpopstate = function() {
+        window.history.pushState(null, '', window.location.href);
+    };
+</script>
 </body>
 </html>

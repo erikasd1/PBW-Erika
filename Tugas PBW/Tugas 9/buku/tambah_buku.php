@@ -1,4 +1,18 @@
 <?php
+session_start();
+if (!isset($_SESSION['login_Un51k4'])) {
+    header("Location: ../login.php?message=" . urlencode("Mengakses fitur harus login dulu cuuuyyy."));
+    exit;
+}
+
+// Mencegah cache
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
+// Tambahkan ini untuk mencegah kembali ke halaman sebelumnya
+echo '<script>if (window.history.length > 1) { window.history.forward(); }</script>';
+
 include '../nav.php';
 ?>
 
@@ -37,5 +51,13 @@ include '../nav.php';
            <button type="submit" class="btn btn-primary">Tambah Buku</button>
        </form>
    </div>
+
+   <script>
+        // Mencegah tombol kembali
+        window.history.pushState(null, '', window.location.href);
+        window.onpopstate = function() {
+            window.history.pushState(null, '', window.location.href);
+        };
+    </script>
 </body>
 </html>
