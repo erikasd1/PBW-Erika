@@ -26,11 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
        $_SESSION['nama'] = $user['nama'];
        $_SESSION['login_Un51k4'] = true;
        header("Location: index.php");
-       header("Location: /TugasPBW/Tugas9/buku/tambah_buku.php");
-       header("Location: /TugasPBW/Tugas9/transaksi/transaksi.php");
-       header("Location: /TugasPBW/Tugas9/transaksi/lihat_transaksi.php");
-       header("Location: /TugasPBW/Tugas9/buku/hapus.php");
-       header("Location: index.php");
        exit;
       
    } else {
