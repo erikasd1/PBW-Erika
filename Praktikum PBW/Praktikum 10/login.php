@@ -5,7 +5,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Ganti validasi ke username erika
     if ($username == "erika" && $password == "123") {
         $_SESSION['username'] = $username;
         $_SESSION['is_logged_in'] = true;
